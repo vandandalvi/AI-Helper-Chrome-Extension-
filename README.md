@@ -8,7 +8,7 @@ A Chrome extension that provides instant AI-powered answers from any webpage wit
 
 ## ✨ Features
 
-- 🎯 **One-Click Answers**: Floating AI button on every webpage
+- 🎯 **One-Click Answers**: Floating AI button on every webpg
 - ⚡ **Fast Response**: ~3 second response time
 - 👁️ **Smart Extraction**: Only extracts visible text from your screen
 - 🔄 **Reliable**: 3 API key fallback system
