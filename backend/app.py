@@ -17,7 +17,7 @@ BACKEND_PORT = int(os.getenv("PORT", 5000))
 app = Flask(__name__)
 CORS(app)
 
-GEMINI_TEXT_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent"
+GEMINI_TEXT_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
 def call_gemini_text(prompt: str):
     payload = {
