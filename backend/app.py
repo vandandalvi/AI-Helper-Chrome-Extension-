@@ -24,7 +24,7 @@ def call_gemini_text(prompt: str):
         "contents": [{"parts":[{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.7,
-            "maxOutputTokens": 1000,  # Much higher to avoid MAX_TOKENS
+            "maxOutputTokens": 500,  # Reduced for faster response
             "topK": 20,
             "topP": 0.8
         }
@@ -88,14 +88,14 @@ def analyze():
             print("ERROR: No text provided")
             return jsonify({"success": False, "error": "No text"}), 400
 
-        # Limit text length for faster processing (visible text only should be ~2000 chars)
-        text = text[:5000]
+        # Limit text length for faster processing
+        text = text[:2000]  # Reduced from 5000 for faster response
         
         print(f"Processing text length: {len(text)}")
         print(f"Text preview: {text[:200]}")
         
-        # Simple prompt - no markdown formatting
-        prompt = f"Answer in plain text without any markdown, asterisks, or formatting:\n\n{text}\n\nAnswer:"
+        # Ultra simple prompt for fastest response
+        prompt = f"Answer briefly in plain text:\n{text}\n\nAnswer:"
 
         print("Calling Gemini API...")
         result = call_gemini_text(prompt)

@@ -181,8 +181,8 @@
     let node;
     while (node = walker.nextNode()) {
       visibleText += node.textContent + " ";
-      // Stop if we have enough text
-      if (visibleText.length > 2000) break;
+      // Stop if we have enough text - reduced for faster processing
+      if (visibleText.length > 1500) break;
     }
     
     // Cleanup text
@@ -190,7 +190,7 @@
       .replace(/\s+/g, " ")
       .replace(/[^\w\s.,!?-]/g, '')
       .trim()
-      .substring(0, 2000);  // Maximum 2000 chars for visible text
+      .substring(0, 1500);  // Maximum 1500 chars for faster response
     
     return visibleText;
   }
